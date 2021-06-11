@@ -4,12 +4,12 @@
   "keywords": ["V2ray", "Shadowsocks", "V2Ray-plugin"],
   "env": {
      "ENCRYPT": {
-      "description": "加密方式，由于有https加持，选最简单的就可以，默认：rc4-md5,其它的有（aes-256-cfb,chacha20-ietf-poly1305,salsa20,chacha20-ietf等.）",
-      "value": "rc4-md5"
+      "description": "加密方式，默认：chacha20-ietf-poly1305，已经不支持rc4-md5了",
+      "value": "chacha20-ietf-poly1305"
     },
      "PASSWORD": {
-      "description": "shadowsocks的密码，可以使用uuid作为密码（http://www.uuid.online/在线生成）",
-      "value": "5c301bb8-6c77-41a0-a606-4ba11bbab084"
+      "description": "shadowsocks的密码，不要用默认的。建议自行生成uuid（http://www.uuid.online/）",
+      "value": "2b86be08-c769-11eb-b400-0a80ff2603de"
     },
 
     "VER": {
@@ -28,13 +28,13 @@
     },
 
     "QR_Path": {
-       "description": "二维码和配置链接路径，默认qr_img，为了保密性你也可以使用uuid,但是不能与V2_Path相同。如AppName变量为no，此变量没有作用",
+       "description": "二维码和配置链接路径，默认qr_img(实际访问路径：/qr_img/)，不能与V2_Path相同。如AppName变量为no，则忽略",
        "value": "/qr_img"
      },
 
      "ProxySite": {
-      "description": "反代一个网站，例如：www.ietf.org，不填写表示使用本地静态网页文件。",
-      "value": "www.ietf.org"
+      "description": "反代一个网站，默认https，例如：github.com，不填写表示使用本地静态网页文件。",
+      "value": "github.com"
     }
 
   },
